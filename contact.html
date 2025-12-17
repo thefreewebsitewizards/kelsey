@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact - Kelsey Autumn</title>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eb477e",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211116",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#181113] dark:text-white font-display min-h-screen flex flex-col overflow-x-hidden transition-colors duration-200">
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-md bg-white/80 dark:bg-background-dark/80 border-b border-[#f4f0f3] dark:border-white/5">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Logo -->
+<a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+<div class="size-8 bg-primary text-white rounded-full flex items-center justify-center shadow-soft">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+</div>
+<h2 class="text-[#181115] dark:text-white text-xl font-bold tracking-tight">KAR</h2>
+</a>
+<!-- Desktop Nav Links -->
+<div class="hidden md:flex flex-1 justify-center gap-10">
+<a class="text-[#181115] dark:text-gray-200 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors" href="portfolio.html">Portfolio</a>
+<a class="text-[#181115] dark:text-gray-200 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors" href="services.html">Services</a>
+<a class="text-[#181115] dark:text-gray-200 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors" href="socialProof.html">Socials</a>
+<a class="text-[#181115] dark:text-gray-200 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors" href="whyChooseMe.html">Why choose me</a>
+</div>
+<!-- Action & Mobile Menu -->
+<div class="flex items-center gap-4">
+<a href="contact.html" class="hidden sm:flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-6 bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-200 text-white text-sm font-bold shadow-soft">
+<span class="truncate">Let's Collab</span>
+</a>
+<!-- Mobile Menu Icon -->
+<button id="mobile-menu-btn" class="md:hidden p-2 text-[#181115] dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-[#f4f0f3] dark:border-white/5 shadow-lg transition-all duration-300 ease-in-out origin-top transform z-40">
+<div class="flex flex-col px-6 py-8 gap-6">
+<a class="text-[#181115] dark:text-gray-200 text-lg font-medium hover:text-primary dark:hover:text-primary transition-colors" href="portfolio.html">Portfolio</a>
+<a class="text-[#181115] dark:text-gray-200 text-lg font-medium hover:text-primary dark:hover:text-primary transition-colors" href="services.html">Services</a>
+<a class="text-[#181115] dark:text-gray-200 text-lg font-medium hover:text-primary dark:hover:text-primary transition-colors" href="socialProof.html">Socials</a>
+<a class="text-[#181115] dark:text-gray-200 text-lg font-medium hover:text-primary dark:hover:text-primary transition-colors" href="whyChooseMe.html">Why choose me</a>
+<a href="contact.html" class="flex w-full mt-2 cursor-pointer items-center justify-center rounded-full h-12 px-6 bg-primary hover:bg-primary/90 transition-all text-white text-base font-bold shadow-soft">
+                Let's Collab
+            </a>
+</div>
+</div>
+</header>
+<script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuIcon = mobileMenuBtn.querySelector('span');
+
+    function toggleMenu() {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            mobileMenuIcon.textContent = 'close';
+        } else {
+            mobileMenu.classList.add('hidden');
+            mobileMenuIcon.textContent = 'menu';
+        }
+    }
+
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+            mobileMenuIcon.textContent = 'menu';
+        }
+    });
+
+    window.addEventListener('resize', () => {
+         if (window.innerWidth >= 768) {
+             mobileMenu.classList.add('hidden');
+             mobileMenuIcon.textContent = 'menu';
+         }
+    });
+</script>
+<main class="flex-grow flex flex-col items-center w-full pt-20">
+<!-- Hero / Contact Intro -->
+<section class="w-full max-w-[1024px] px-6 py-12 md:py-20 flex flex-col items-center text-center relative overflow-hidden">
+<!-- Decorative background elements -->
+<div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+<div class="absolute bottom-0 right-1/4 w-80 h-80 bg-purple-400/5 rounded-full blur-[80px] pointer-events-none -z-10"></div>
+<div class="mb-8 relative">
+<div class="w-32 h-32 md:w-40 md:h-40 rounded-full p-1 border-2 border-primary/20 bg-white dark:bg-white/5">
+<img alt="Portrait of Kelsey Autumn" class="w-full h-full object-cover rounded-full" src="Images/firstselfi.jpg"/>
+</div>
+<div class="absolute bottom-2 right-2 bg-white dark:bg-background-dark rounded-full p-2 shadow-md border border-gray-100 dark:border-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">waving_hand</span>
+</div>
+</div>
+<h1 class="text-4xl md:text-6xl font-black tracking-tight mb-4 text-[#181113] dark:text-white leading-tight">
+                Let's Create <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Magic</span> Together
+            </h1>
+<p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mb-10 leading-relaxed">
+                High-converting UGC for beauty &amp; lifestyle brands. Based in Los Angeles, CA.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 w-full justify-center max-w-lg">
+                <button class="group relative flex items-center justify-center gap-2 md:gap-3 bg-primary text-white h-12 md:h-14 px-4 md:px-8 rounded-full text-base md:text-lg font-bold shadow-xl shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-1 transition-all w-full sm:w-auto" onclick="copyEmail(this)">
+                    <span class="material-symbols-outlined text-[20px] md:text-[24px]">mail</span>
+                    <span class="truncate">hello@kelseyautumn.com</span>
+                    <span class="absolute -top-10 scale-0 group-active:scale-100 transition-transform bg-black text-white text-xs py-1 px-3 rounded-lg">Copied!</span>
+                </button>
+                <button class="flex items-center justify-center gap-2 md:gap-3 bg-white dark:bg-white/10 text-[#181113] dark:text-white border border-gray-200 dark:border-white/10 h-12 md:h-14 px-6 md:px-8 rounded-full text-base md:text-lg font-bold hover:bg-gray-50 dark:hover:bg-white/20 transition-all w-full sm:w-auto" onclick="bookCall()">
+                    <span class="material-symbols-outlined text-[20px] md:text-[24px]">calendar_month</span>
+                    <span>Book a Call</span>
+                </button>
+            </div>
+</section>
+<!-- Social Proof Grid -->
+<section class="w-full max-w-[1280px] px-6 py-10">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- TikTok Card -->
+<a class="group relative bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-lg p-8 flex flex-col items-center text-center shadow-sm hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-300 overflow-hidden" href="https://tiktok.com" target="_blank">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-black to-gray-800 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-16 h-16 rounded-full bg-gray-50 dark:bg-white/10 flex items-center justify-center mb-4 group-hover:bg-black group-hover:text-white transition-colors text-black dark:text-white">
+<!-- Custom SVG for TikTok since material icons doesn't have brand icons generally, using a placeholder icon for concept -->
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"></path></svg>
+</div>
+<h3 class="text-2xl font-bold mb-1">TikTok</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-4">@kelseyautumn</p>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-3xl font-black text-[#181113] dark:text-white">150K+</span>
+<span class="text-xs font-bold uppercase tracking-wide text-gray-400">Followers</span>
+</div>
+<p class="text-sm text-gray-600 dark:text-gray-300 max-w-[200px]">Viral trends, storytelling &amp; unboxing</p>
+</a>
+<!-- Instagram Card -->
+<a class="group relative bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-lg p-8 flex flex-col items-center text-center shadow-sm hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-300 overflow-hidden" href="https://instagram.com" target="_blank">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-16 h-16 rounded-full bg-gray-50 dark:bg-white/10 flex items-center justify-center mb-4 group-hover:bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 group-hover:text-white transition-all text-black dark:text-white">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</div>
+<h3 class="text-2xl font-bold mb-1">Instagram</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-4">@kelsey.autumn</p>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-3xl font-black text-[#181113] dark:text-white">85K+</span>
+<span class="text-xs font-bold uppercase tracking-wide text-gray-400">Followers</span>
+</div>
+<p class="text-sm text-gray-600 dark:text-gray-300 max-w-[200px]">Aesthetic lifestyle, beauty reels &amp; stories</p>
+</a>
+<!-- YouTube Card -->
+<a class="group relative bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-lg p-8 flex flex-col items-center text-center shadow-sm hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-300 overflow-hidden" href="https://youtube.com" target="_blank">
+<div class="absolute top-0 left-0 w-full h-1 bg-[#FF0000] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-16 h-16 rounded-full bg-gray-50 dark:bg-white/10 flex items-center justify-center mb-4 group-hover:bg-[#FF0000] group-hover:text-white transition-colors text-black dark:text-white">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg>
+</div>
+<h3 class="text-2xl font-bold mb-1">YouTube</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Kelsey Autumn Vlogs</p>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-3xl font-black text-[#181113] dark:text-white">20K+</span>
+<span class="text-xs font-bold uppercase tracking-wide text-gray-400">Subscribers</span>
+</div>
+<p class="text-sm text-gray-600 dark:text-gray-300 max-w-[200px]">In-depth reviews, routines &amp; long-form</p>
+</a>
+</div>
+</section>
+<!-- Previous Collaborations (Trust Signals) -->
+<section class="w-full max-w-[1024px] px-6 py-16 flex flex-col items-center">
+<h4 class="text-sm font-bold uppercase tracking-widest text-gray-400 mb-8">Previous Collaborations</h4>
+<div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<!-- Using placeholder svgs for brand logos -->
+<div class="h-8 md:h-10 w-auto text-[#181113] dark:text-white">
+<img alt="Sephora Logo" class="h-full w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA49agK4sxwjqrmqAhc3KhL35mZG_cwXL0BE30ZH9lUmsE6uy6uxtPR4N4XF8lZiutAzxHM6qpSkgL6ewSwoAsLv01N3OJchpQmJ_3ipqbYragVFtcG-EglU4kEUxbYN_04Wp8IvjhuApsbEhMf1mJo6Quhc-j-wt53owDG-e7sX_nTfIzGNw6Mfb8-5uTSO5qivshCOKhw4_E5MgxJTg1WSIo3gRsAJMfMh4sjLVjGneF2NuqmlphoPHsKFnKWZEo83HYntz7cCF4"/>
+</div>
+<div class="h-8 md:h-10 w-auto text-[#181113] dark:text-white">
+<img alt="Nike Logo" class="h-full w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC4WLQaP8_QzDQJf7MUY6u_tob_FJoMgprhocr3uLSW-UcxZK7owyP8PdkVQVn6JcnrVdDY7jBZ3TbgCUk39Ba6HfEQP4d02ezzUqB0p1Fkq_c-finUHCFcouCbvpn-33XzyOXgfGjJB52S60VZY0Hmg5_HXGTobC8UpkeD3ZOGv5Mk_8fhYxYQl0hlkPGKBqXW67G8jjOgBVQdmclWR5aF6AC2N0sK336O26-KtgehjmaiuzEGBlb0uyjoT827l8mLRMr0XQGIQU"/>
+</div>
+<div class="h-6 md:h-8 w-auto text-[#181113] dark:text-white">
+<img alt="Glossier Logo" class="h-full w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeZ_vq3CSF4qYds6U-GBwDhxZ24Tciw4tXdzdV7GF1BUAeBLpGD-qGjSlpKVhBPCwWc0uyZROP-67henOHC5ZZO4lBKC0mAOG61gJQ91eOB2qVkNNt-F_tIuUqEtgdsz2mBCKahhFuBJ1dXNO-QtLFGCKU-II9uirLsBm9fiA7bf6yOQUmuj6yjSppxwMGYj2ab7Tx6fReamA5_lHXRcq9u9uCxeGue2RzWvdoIsE-62_pBLhjGByPcY-QtEGCX_Qv4fh2Dc5uqKk"/>
+</div>
+<div class="h-8 md:h-10 w-auto text-[#181113] dark:text-white">
+<img alt="Lululemon Logo" class="h-full w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEoEIrdc3FDOsHW8S2GV_jhuVZ8LNDpvYN3Cs7oFBfMQpQnGY-v-KTqAzcVczh1Rrc_oFxSth0yjjFNPZRhtcZ7SuUNvH7coZ6fyFUq_q6YuZzVlBTZfO_2kidwjlSVDXnHeDVyhUDfizqM3dx73PaujNFjmhKT5jz0XTUnbru7a1AAJF2ynY4kb4xYMwcZy7BWk0QmeFqu7AYNcSovTkq_5g4qhCrFp1cZODqLdicRceqx6pCDmwr6IGr_cxpA2CzuKDelfZQ1Xs"/>
+</div>
+</div>
+</section>
+<!-- Newsletter / Secondary Call to Action -->
+<section class="w-full max-w-[1280px] px-6 pb-20 pt-10">
+<div class="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+<div class="flex flex-col gap-4 max-w-lg relative z-10">
+<h3 class="text-2xl md:text-3xl font-bold">Subscribe to my creator newsletter</h3>
+<p class="text-gray-600 dark:text-gray-300">Get weekly tips on content creation, brand deals, and aesthetic lifestyle directly to your inbox.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto relative z-10">
+<input class="bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 rounded-full px-6 py-3 min-w-[280px] focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm" placeholder="Your email address" type="email" id="newsletter-email"/>
+<button class="bg-[#181113] dark:bg-white hover:bg-opacity-90 dark:hover:bg-opacity-90 text-white dark:text-[#181113] px-6 py-3 rounded-full font-bold text-sm whitespace-nowrap transition-colors" onclick="subscribeNewsletter()">
+                        Join the list
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#f4f0f2] dark:border-white/10 bg-white dark:bg-background-dark py-12">
+<div class="max-w-[1280px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-xl font-bold">Kelsey Autumn</span>
+<p class="text-sm text-gray-500 dark:text-gray-400">© 2024 Kelsey Autumn. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-sm text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" href="javascript:void(0)" onclick="alert('Privacy Policy coming soon!')">Privacy Policy</a>
+<a class="text-sm text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" href="javascript:void(0)" onclick="alert('Terms of Service coming soon!')">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+    function copyEmail(btn) {
+        const email = 'hello@kelseyautumn.com';
+        navigator.clipboard.writeText(email).then(() => {
+            // Visual feedback handled by CSS group-active, but we can also force it for a moment if we want
+            // For now the CSS :active is a bit quick, let's add a class
+            const span = btn.querySelector('.absolute');
+            span.classList.remove('scale-0');
+            span.classList.add('scale-100');
+            setTimeout(() => {
+                span.classList.remove('scale-100');
+                span.classList.add('scale-0');
+            }, 2000);
+        });
+    }
+
+    function bookCall() {
+        window.open('https://calendly.com', '_blank');
+    }
+
+    function subscribeNewsletter() {
+        const emailInput = document.getElementById('newsletter-email');
+        if (emailInput.value && emailInput.value.includes('@')) {
+            alert("Thanks for subscribing! You've been added to the list.");
+            emailInput.value = '';
+        } else {
+            alert("Please enter a valid email address.");
+        }
+    }
+</script>
+</body></html>

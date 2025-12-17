@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kelsey Autumn | UGC Creator</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e8307d",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#211118",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181114] dark:text-slate-50 antialiased overflow-x-hidden">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-md bg-white/80 dark:bg-background-dark/80 border-b border-[#f4f0f3] dark:border-white/5">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Logo -->
+<a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+<div class="size-8 bg-primary text-white rounded-full flex items-center justify-center shadow-soft">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+</div>
+<h2 class="text-[#181115] dark:text-white text-xl font-bold tracking-tight">KAR</h2>
+</a>
+<!-- Desktop Nav Links -->
+<div class="hidden md:flex flex-1 justify-center gap-10">
+<a class="text-[#181115] dark:text-gray-200 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors" href="portfolio.html">Portfolio</a>
+<a class="text-[#181115] dark:text-gray-200 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors" href="services.html">Services</a>
+<a class="text-[#181115] dark:text-gray-200 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors" href="socialProof.html">Socials</a>
+<a class="text-[#181115] dark:text-gray-200 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors" href="whyChooseMe.html">Why choose me</a>
+</div>
+<!-- Action & Mobile Menu -->
+<div class="flex items-center gap-4">
+<a href="contact.html" class="hidden sm:flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-6 bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-200 text-white text-sm font-bold shadow-soft">
+<span class="truncate">Let's Collab</span>
+</a>
+<!-- Mobile Menu Icon -->
+<button id="mobile-menu-btn" class="md:hidden p-2 text-[#181115] dark:text-white focus:outline-none">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-[#f4f0f3] dark:border-white/5 shadow-lg transition-all duration-300 ease-in-out origin-top transform z-40">
+<div class="flex flex-col px-6 py-8 gap-6">
+<a class="text-[#181115] dark:text-gray-200 text-lg font-medium hover:text-primary dark:hover:text-primary transition-colors" href="portfolio.html">Portfolio</a>
+<a class="text-[#181115] dark:text-gray-200 text-lg font-medium hover:text-primary dark:hover:text-primary transition-colors" href="services.html">Services</a>
+<a class="text-[#181115] dark:text-gray-200 text-lg font-medium hover:text-primary dark:hover:text-primary transition-colors" href="socialProof.html">Socials</a>
+<a class="text-[#181115] dark:text-gray-200 text-lg font-medium hover:text-primary dark:hover:text-primary transition-colors" href="whyChooseMe.html">Why choose me</a>
+<a href="contact.html" class="flex w-full mt-2 cursor-pointer items-center justify-center rounded-full h-12 px-6 bg-primary hover:bg-primary/90 transition-all text-white text-base font-bold shadow-soft">
+                Let's Collab
+            </a>
+</div>
+</div>
+</header>
+<script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuIcon = mobileMenuBtn.querySelector('span');
+
+    function toggleMenu() {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            mobileMenuIcon.textContent = 'close';
+        } else {
+            mobileMenu.classList.add('hidden');
+            mobileMenuIcon.textContent = 'menu';
+        }
+    }
+
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+            mobileMenuIcon.textContent = 'menu';
+        }
+    });
+
+    window.addEventListener('resize', () => {
+         if (window.innerWidth >= 768) {
+             mobileMenu.classList.add('hidden');
+             mobileMenuIcon.textContent = 'menu';
+         }
+    });
+</script>
+<main class="layout-container flex flex-col items-center w-full pt-20">
+<!-- Hero Section -->
+<section class="w-full max-w-[1100px] px-4 md:px-10 py-12 md:py-20 flex flex-col items-center text-center">
+<h1 class="text-4xl md:text-6xl font-black leading-[1.1] tracking-[-0.02em] text-[#181114] dark:text-white">
+                            More Than Just A <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Pretty Feed</span>
+</h1>
+</section>
+<!-- Metrics Section -->
+<section class="w-full max-w-[1100px] px-4 md:px-10 py-12 md:py-20">
+<div class="layout-content-container flex flex-col gap-6">
+<!-- Header -->
+<div class="flex flex-col md:flex-row justify-between items-end gap-4 pb-6 border-b border-primary/10 dark:border-white/10">
+<div class="max-w-2xl">
+<h2 class="text-[#181114] dark:text-white text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-3">Impact by Numbers</h2>
+<p class="text-slate-500 dark:text-slate-400 text-lg">Data-driven content that converts. Here is a snapshot of my performance across platforms.</p>
+</div>
+<a href="contact.html" class="flex items-center gap-2 text-primary font-bold text-sm hover:underline">
+                            Download Media Kit <span class="material-symbols-outlined text-sm">download</span>
+</a>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-4">
+<!-- Card 1 -->
+<div class="group flex flex-col gap-4 rounded-xl p-6 bg-white dark:bg-white/5 border border-slate-100 dark:border-white/5 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider mb-1">Total Views</p>
+<p class="text-primary tracking-tight text-4xl font-bold leading-none">5.4M+</p>
+</div>
+<div class="h-1 w-full bg-slate-100 dark:bg-white/10 rounded-full overflow-hidden mt-auto">
+<div class="h-full w-[85%] bg-primary rounded-full"></div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col gap-4 rounded-xl p-6 bg-white dark:bg-white/5 border border-slate-100 dark:border-white/5 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined">thumb_up</span>
+</div>
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider mb-1">Engagement Rate</p>
+<p class="text-primary tracking-tight text-4xl font-bold leading-none">8.5%</p>
+</div>
+<div class="h-1 w-full bg-slate-100 dark:bg-white/10 rounded-full overflow-hidden mt-auto">
+<div class="h-full w-[65%] bg-primary rounded-full"></div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col gap-4 rounded-xl p-6 bg-white dark:bg-white/5 border border-slate-100 dark:border-white/5 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined">timelapse</span>
+</div>
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider mb-1">Turnaround Time</p>
+<p class="text-primary tracking-tight text-4xl font-bold leading-none">&lt; 48 Hrs</p>
+</div>
+<div class="h-1 w-full bg-slate-100 dark:bg-white/10 rounded-full overflow-hidden mt-auto">
+<div class="h-full w-[95%] bg-primary rounded-full"></div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group flex flex-col gap-4 rounded-xl p-6 bg-white dark:bg-white/5 border border-slate-100 dark:border-white/5 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined">video_library</span>
+</div>
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider mb-1">Videos Created</p>
+<p class="text-primary tracking-tight text-4xl font-bold leading-none">200+</p>
+</div>
+<div class="h-1 w-full bg-slate-100 dark:bg-white/10 rounded-full overflow-hidden mt-auto">
+<div class="h-full w-[75%] bg-primary rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof Section -->
+<section class="w-full bg-white dark:bg-[#1f1217] py-16">
+<div class="flex justify-center w-full px-4 md:px-10">
+<div class="layout-content-container flex flex-col max-w-[1100px] w-full gap-12">
+<!-- Header -->
+<div class="text-center max-w-2xl mx-auto">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4">
+<span class="material-symbols-outlined text-sm">verified</span> Social Proof
+                            </div>
+<h2 class="text-[#181114] dark:text-white text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-4">Trusted by Industry Leaders</h2>
+<p class="text-slate-500 dark:text-slate-400">I've partnered with over 50+ brands to create authentic stories that resonate with audiences.</p>
+</div>
+<!-- Logo Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-8 items-center justify-items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+<!-- Logo 1 -->
+<div class="w-32 h-16 bg-contain bg-center bg-no-repeat" data-alt="Logo of a skincare brand" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAcFU7eXojTaNNXYxzAOLaK6l8f_iPWHM7QIQbDILcAxD-bLwoOs_zthS2QvDnsUh4_cj1ML2ZySpToxWrFUhR7HBkjG00B2PjAhOIF8z_tVp0kZRnUlyzdQojNjU2OjmoClE6xNSKHtu2dAYKjzvAWmFMEZvdFImFyidksUyUtj6faux6r3oNu2BIFyTS6hMMBH-j3LPlUJk1LqxXWsKqIgOZ1aZKZQoyp-FlC2ZM3Dwy8XpN9PcjbbX0eqL18OjAb0VFloc48Wrg");'></div>
+<!-- Logo 2 -->
+<div class="w-32 h-16 bg-contain bg-center bg-no-repeat" data-alt="Logo of a fashion brand" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZVWCkM73MlLXw-KG3kXE8pl1clyQ_L7n-sqr3fiPWDsLc511JJYJuh6LygXq7cxcUL5XCKgRnDyz7H1LqxVbX4sYgh0d8P26sWweW3UYCMXAlmCLASGgvL99RDuyWbaCUg0ykAVu6DFhnaLEy3Pv3hnSxGwsBhOEVQQOoPOW3kZzpoEB5H9j9MSLsM5ySPFDLQs3ejebTMDlSQKbVOuLE6FMeXxe8aC_jHzBezbJ8UFBJnfwUCuAxlibBxdjAqF0e5mfnLZlO2zo");'></div>
+<!-- Logo 3 -->
+<div class="w-32 h-16 bg-contain bg-center bg-no-repeat" data-alt="Logo of a tech company" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwwCTLdJ1FK-R1LhqOuU84zmahT8ZbRaq7x5W4YIKEH4L2ng8nC7vHSfdNvG_mX5QAq5eeDMKo0D_8HxTXHl2oJ73TplO7C8ZZ72sPu_IIkSpZYrN6a12VW_xztyozdtz2OvUXwIyG8lHT6eUWcc0m2iQywTCSgcaizrSaMtH1LAb6GzHWZm8AewQ9QmD3KmcxRzt5Vq9lG1lbuHMUYd9uLbnLyxoGYp1OmNR4y-v1CrOXHsXLWZ1uYsE19mLaxEMfpM3p7zbcPkE");'></div>
+<!-- Logo 4 -->
+<div class="w-32 h-16 bg-contain bg-center bg-no-repeat" data-alt="Logo of a beverage brand" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwfrXtPVNvYa2Hv_yw7fUoz6ie2c5nw8s_nkdHkbkYkEvYBR-Q_p_2iQRQRT5t8pfUhUOy4oxpI_vW6H2xRjcLJPDDg_kebs8oCaIo1AB5F5vffKp4SSN4QqEljcezLHSs10DEZb_StcGxPi18GMQzHktbfxqHjYVQoVYI1Y14EIHqwUCSUaXd1gCeTnVA0pTgnAVFyW7yH-TlZWEG-YCkxMpQ6stvv6wdPoRarKAT2M0zvD0T9rzrblwydKqLG3TyB2xjyNDyG-g");'></div>
+<!-- Logo 5 -->
+<div class="w-32 h-16 bg-contain bg-center bg-no-repeat" data-alt="Logo of a fitness app" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAeXoFwOub27sRxbsBioTvU7s6P2QmtdX8qv5DQOdTpMyVuCjGRSdOYCNlaipeaTqKIMRfqu3Lc3H98jmzUibN4P1v4vJB31XE7TSupu88g9wTA34NOZ8is9JH0uI3u69qE4TXl8qR0tTQVKJRQhsnARhNQsAl2jqfV0lKrO3iRb_5J1uOw1bjOGDiWzd_Rx_yIiRcIVhJDTLGH-Ve8Egn93Ow85CQO-pUmIKXDkPG9UJ9UgNIkTcMNCMXXba1CDh611AVGtBi4HJY");'></div>
+<!-- Logo 6 -->
+<div class="w-32 h-16 bg-contain bg-center bg-no-repeat" data-alt="Logo of a cosmetic brand" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBtEIrFgy4iXvKOcAbLRQt_MT2RtMc44MsLr6F279bJSfnG_eRbT4DqEULCKDq3sAnH-Er3Aa4UbWxMb5dqwo5Na6QMUf6i9CkL7etUz_rex2LtlCsa3jP7whPzFHvssoozvL7Sa4hBUEWZk88acctSxeOEXOY4E0bVNQh0nk7jsspySCjXdFGgvGcn5k7qQrlYb5Fhv3jEPfvXT3wp7PrTqesu4fSFa_o33LfTAF1DRVFKlRHAiOvFY7nFVZo4YNVY5jhrXVPWJP8");'></div>
+</div>
+<!-- Testimonial Slider Area -->
+<div class="mt-8 relative rounded-2xl bg-primary/5 dark:bg-white/5 p-8 md:p-12 overflow-hidden" id="testimonial-slider">
+<!-- Decor -->
+<div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="relative z-10 flex flex-col md:flex-row gap-8 items-center transition-opacity duration-500" id="testimonial-content">
+<div class="shrink-0">
+<div class="size-20 md:size-24 rounded-full bg-cover bg-center border-4 border-white dark:border-white/10 shadow-lg" data-alt="Profile picture of Sarah Jenkins, Marketing Director" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCHt-IAlxWtV-SaRxxmkXeWGWLh6Fy8kKr3tPX_T5MKnK2_lJuobG2bp_4QZhH7fSOgexNHUTn4isb0CjZA3CWMAeG3QAgegQUCg1LYKIyi4Njf3TXz29JbBXFtCGsMoj4hepRX2ZKw7zjQLDG06IPEYc6ZKtZpHh7kfayzZBtsXNoWi7QfPEljyKchXa1teRJPStWHIMxTKhHX6oyneHwmaXSUjAPMiprcVdfeR35FbtLvD4baGmUWJdZVbkcdXGygY7_jgMxAhiA");'></div>
+</div>
+<div class="flex-1 text-center md:text-left">
+<span class="material-symbols-outlined text-4xl text-primary/40 mb-4 block md:inline-block">format_quote</span>
+<p class="text-xl md:text-2xl font-medium text-[#181114] dark:text-white leading-relaxed mb-6">
+                                        Kelsey's content outperformed our internal ads by 3x. She just gets the aesthetic and knows exactly how to hook the audience in the first 3 seconds.
+                                    </p>
+<div>
+<p class="font-bold text-[#181114] dark:text-white text-lg">Sarah Jenkins</p>
+<p class="text-slate-500 dark:text-slate-400">Marketing Director at GlowSkin</p>
+</div>
+</div>
+</div>
+<!-- Navigation Dots -->
+<div class="absolute bottom-6 right-6 md:right-12 flex gap-2" id="testimonial-dots">
+<button class="w-2.5 h-2.5 rounded-full bg-primary transition-colors" onclick="setTestimonial(0)"></button>
+<button class="w-2.5 h-2.5 rounded-full bg-primary/20 hover:bg-primary/50 transition-colors" onclick="setTestimonial(1)"></button>
+<button class="w-2.5 h-2.5 rounded-full bg-primary/20 hover:bg-primary/50 transition-colors" onclick="setTestimonial(2)"></button>
+</div>
+</div>
+<script>
+    const testimonials = [
+        {
+            text: "Kelsey's content outperformed our internal ads by 3x. She just gets the aesthetic and knows exactly how to hook the audience in the first 3 seconds.",
+            name: "Sarah Jenkins",
+            role: "Marketing Director at GlowSkin",
+            img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCHt-IAlxWtV-SaRxxmkXeWGWLh6Fy8kKr3tPX_T5MKnK2_lJuobG2bp_4QZhH7fSOgexNHUTn4isb0CjZA3CWMAeG3QAgegQUCg1LYKIyi4Njf3TXz29JbBXFtCGsMoj4hepRX2ZKw7zjQLDG06IPEYc6ZKtZpHh7kfayzZBtsXNoWi7QfPEljyKchXa1teRJPStWHIMxTKhHX6oyneHwmaXSUjAPMiprcVdfeR35FbtLvD4baGmUWJdZVbkcdXGygY7_jgMxAhiA"
+        },
+        {
+            text: "The ROI on Kelsey's videos has been insane. We saw a 150% increase in click-through rate on our paid social campaigns within the first week.",
+            name: "Mike Chen",
+            role: "Founder, Urban Wear",
+            img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+        },
+        {
+            text: "Professional, creative, and fast. Kelsey understood our brand voice immediately and delivered content that felt native to the platform.",
+            name: "Emily Rodriguez",
+            role: "Social Lead, Bloom Beauty",
+            img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+        }
+    ];
+
+    let currentTestimonial = 0;
+    const contentContainer = document.getElementById('testimonial-content');
+    const dotsContainer = document.getElementById('testimonial-dots');
+
+    function setTestimonial(index) {
+        currentTestimonial = index;
+        updateTestimonial();
+        resetTimer();
+    }
+
+    function updateTestimonial() {
+        // Fade out
+        contentContainer.style.opacity = '0';
+        
+        setTimeout(() => {
+            const t = testimonials[currentTestimonial];
+            
+            // Update content
+            const imgDiv = contentContainer.querySelector('.shrink-0 div');
+            imgDiv.style.backgroundImage = `url("${t.img}")`;
+            
+            const quoteP = contentContainer.querySelector('.flex-1 p');
+            quoteP.textContent = t.text;
+            
+            const nameP = contentContainer.querySelector('.flex-1 div p:first-child');
+            nameP.textContent = t.name;
+            
+            const roleP = contentContainer.querySelector('.flex-1 div p:last-child');
+            roleP.textContent = t.role;
+            
+            // Update dots
+            const dots = dotsContainer.querySelectorAll('button');
+            dots.forEach((dot, idx) => {
+                if (idx === currentTestimonial) {
+                    dot.classList.remove('bg-primary/20', 'hover:bg-primary/50');
+                    dot.classList.add('bg-primary');
+                } else {
+                    dot.classList.add('bg-primary/20', 'hover:bg-primary/50');
+                    dot.classList.remove('bg-primary');
+                }
+            });
+            
+            // Fade in
+            contentContainer.style.opacity = '1';
+        }, 300);
+    }
+
+    let intervalId = setInterval(() => {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        updateTestimonial();
+    }, 5000);
+
+    function resetTimer() {
+        clearInterval(intervalId);
+        intervalId = setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            updateTestimonial();
+        }, 5000);
+    }
+</script>
+</div>
+</div>
+</section>
+</main>
+<!-- Simple Footer -->
+<footer class="w-full bg-white dark:bg-[#1a0d13] border-t border-[#f4f0f2] dark:border-white/10 py-10 mt-auto">
+<div class="layout-container flex justify-center w-full px-4 md:px-10">
+<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-[1280px] gap-6">
+<p class="text-sm text-slate-500 dark:text-slate-400">© 2023 Kelsey Autumn. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-slate-400 hover:text-primary transition-colors" href="contact.html"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="https://instagram.com" target="_blank"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="https://youtube.com" target="_blank"><span class="material-symbols-outlined">videocam</span></a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

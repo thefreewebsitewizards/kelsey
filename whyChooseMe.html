@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kelsey Autumn - UGC Creator Portfolio</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f04299",
+                        "primary-dark": "#d62f80",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#221019",
+                        "text-main": "#181114",
+                        "text-muted": "#896175",
+                        "card-bg": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "sans": ["Spline Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "1.5rem", 
+                        "xl": "2.5rem", 
+                        "2xl": "3rem",
+                        "full": "9999px"
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display overflow-x-hidden antialiased selection:bg-primary selection:text-white">
+<div class="relative flex min-h-screen w-full flex-col group/design-root">
+<!-- Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-md bg-white/80 dark:bg-background-dark/80 border-b border-[#f4f0f3] dark:border-white/5">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Logo -->
+<a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+<div class="size-8 bg-primary text-white rounded-full flex items-center justify-center shadow-soft">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+</div>
+<h2 class="text-[#181115] dark:text-white text-xl font-bold tracking-tight">KAR</h2>
+</a>
+<!-- Desktop Nav Links -->
+<div class="hidden md:flex flex-1 justify-center gap-10">
+<a class="text-[#181115] dark:text-gray-200 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors" href="portfolio.html">Portfolio</a>
+<a class="text-[#181115] dark:text-gray-200 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors" href="services.html">Services</a>
+<a class="text-[#181115] dark:text-gray-200 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors" href="socialProof.html">Socials</a>
+<a class="text-[#181115] dark:text-gray-200 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors" href="whyChooseMe.html">Why choose me</a>
+</div>
+<!-- Action & Mobile Menu -->
+<div class="flex items-center gap-4">
+<a href="contact.html" class="hidden sm:flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-11 px-6 bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-200 text-white text-sm font-bold shadow-soft">
+<span class="truncate">Let's Collab</span>
+</a>
+<!-- Mobile Menu Icon -->
+<button id="mobile-menu-btn" class="md:hidden p-2 text-[#181115] dark:text-white focus:outline-none">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-[#f4f0f3] dark:border-white/5 shadow-lg transition-all duration-300 ease-in-out origin-top transform z-40">
+<div class="flex flex-col px-6 py-8 gap-6">
+<a class="text-[#181115] dark:text-gray-200 text-lg font-medium hover:text-primary dark:hover:text-primary transition-colors" href="portfolio.html">Portfolio</a>
+<a class="text-[#181115] dark:text-gray-200 text-lg font-medium hover:text-primary dark:hover:text-primary transition-colors" href="services.html">Services</a>
+<a class="text-[#181115] dark:text-gray-200 text-lg font-medium hover:text-primary dark:hover:text-primary transition-colors" href="socialProof.html">Socials</a>
+<a class="text-[#181115] dark:text-gray-200 text-lg font-medium hover:text-primary dark:hover:text-primary transition-colors" href="whyChooseMe.html">Why choose me</a>
+<a href="contact.html" class="flex w-full mt-2 cursor-pointer items-center justify-center rounded-full h-12 px-6 bg-primary hover:bg-primary/90 transition-all text-white text-base font-bold shadow-soft">
+                Let's Collab
+            </a>
+</div>
+</div>
+</header>
+<script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuIcon = mobileMenuBtn.querySelector('span');
+
+    function toggleMenu() {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            mobileMenuIcon.textContent = 'close';
+        } else {
+            mobileMenu.classList.add('hidden');
+            mobileMenuIcon.textContent = 'menu';
+        }
+    }
+
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+            mobileMenuIcon.textContent = 'menu';
+        }
+    });
+
+    window.addEventListener('resize', () => {
+         if (window.innerWidth >= 768) {
+             mobileMenu.classList.add('hidden');
+             mobileMenuIcon.textContent = 'menu';
+         }
+    });
+</script>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col items-center w-full pt-20">
+<!-- Hero Section -->
+<div class="w-full flex justify-center px-4 md:px-10 py-12 md:py-20">
+<div class="w-full max-w-[1100px] flex flex-col md:flex-row gap-10 items-center">
+<!-- Content -->
+<div class="flex flex-col gap-6 md:w-1/2 md:pr-8 text-center md:text-left z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold w-fit mx-auto md:mx-0">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>UGC Creator &amp; Strategist</span>
+</div>
+<h1 class="text-4xl md:text-6xl font-black leading-[1.1] tracking-[-0.02em] text-text-main dark:text-white">
+                            More Than Just A <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Pretty Feed</span>
+</h1>
+<p class="text-lg text-text-muted dark:text-gray-300 font-normal leading-relaxed">
+                            Turning viewers into community. I bring an approachable expert vibe, blending high-fashion aesthetics with strategic ROI that actually converts.
+                        </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-2 justify-center md:justify-start">
+<a href="contact.html" class="flex items-center justify-center rounded-full h-12 px-8 bg-primary hover:bg-primary-dark text-white text-base font-bold shadow-xl shadow-primary/30 transition-all hover:scale-105">
+                                Start Your Campaign
+                            </a>
+<a href="portfolio.html" class="flex items-center justify-center rounded-full h-12 px-8 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-gray-50 text-text-main dark:text-white text-base font-bold transition-all">
+                                View Portfolio
+</a>
+</div>
+<!-- Social Proof Mini -->
+<div class="flex items-center gap-4 justify-center md:justify-start pt-4 opacity-80">
+<div class="flex -space-x-3">
+<div class="size-8 rounded-full border-2 border-white bg-gray-200" data-alt="Brand logo placeholder 1" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBIPa9B69fKoQhLZZRgmoGl1qFeK9r4wk5RyFT-qMjDRXwx_nZZ3ydaRTJjsAz5ZSQc2qDLsEVpvmIB0XAY2ZM4KH2T1rLSWtRwFLaLkqx_4diDeHQq7Si1NAm-Q4Uw9fO6EHWivsancxnXuUC5NNDG2ivFSDLLbtrGix4BSVo9fJYS1IX-TtgmSVJd1Bv6hP-bGLRQN-rnxBZhGba6e-1OCnZ6InVCia03jvlrb_DjE40Tkr2T8z4heUr1Wk3_0nmC9MdCOpbKQvY');"></div>
+<div class="size-8 rounded-full border-2 border-white bg-gray-300" data-alt="Brand logo placeholder 2" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHMaM5k-9CEww53HIbLGwv3zR_LeTF4XN1pm0CkNUmJ2rVDbln3NWSUp47Ul7I8ZyIzUy4jh9Bj0hhmg0fsKukE9PqiSqd4IuBP3Y-CIm1LtTrLq-AZb-Lj9ZQn_gk5kTYnJyqMZTzJqBCnmkWoP7qssxaONS2ozgXv7ji1ncLBa4qtj8Qemcgt9Pl5losLTCpU0Qy7PCJ7PK9moGbrCMQPDFqpgUKzhrdkDBrDiqIB15Vq1q7rd1d4sbvodZSPZa-c4qCU3BbQWE');"></div>
+<div class="size-8 rounded-full border-2 border-white bg-gray-400" data-alt="Brand logo placeholder 3" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCtwhzb2vsqVXUbt5Yo1__CUVxUvMBxrPo4vgojvZNtCA7O_1rLqvvK4rq_ZFGR9FvLvL7xMds_kXfKuGJaR5so2l4-GxkZdvAqjeB0MM267oFMBA9Fe8fCR6DzKFL-KHSHpBwPTehyEljj6gMzdfZdPOmMgK30gYbnT4dMQCdLpJtTIFyc7Y_FyFtAW4D1uPAXWhsGeM4r86yL_3WAcGeR94EBvVFUmmYS__jQ5_SNevxr1qh-LfOiTJMayuDAukNNQhr46ibzOcc');"></div>
+</div>
+<span class="text-sm font-medium text-text-muted">Trusted by 50+ Brands</span>
+</div>
+</div>
+<!-- Image with decorations -->
+<div class="relative md:w-1/2 flex justify-center md:justify-end">
+<div class="absolute -top-10 -right-10 size-64 bg-primary/10 rounded-full blur-3xl dark:bg-primary/20"></div>
+<div class="absolute -bottom-10 -left-10 size-64 bg-blue-300/20 rounded-full blur-3xl"></div>
+<div class="relative w-full max-w-[400px] aspect-[4/5] rounded-2xl md:rounded-[3rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 ease-out">
+<img alt="Behind the scenes content creation" class="w-full h-full object-cover" src="Images/Behind-the-scene-pic.jpg"/>
+<!-- Floating Badge -->
+<div class="absolute bottom-6 left-6 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">trending_up</span>
+<span class="text-sm font-bold">1.2M+ Reach</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- "Why Choose Me" Section (Split Screen Feature Layout) -->
+<div class="w-full bg-white dark:bg-white/5 py-20 px-4 md:px-10 flex justify-center rounded-t-[3rem] md:rounded-t-[5rem] shadow-[0_-20px_40px_-15px_rgba(0,0,0,0.05)] z-20">
+<div class="max-w-[1100px] w-full flex flex-col gap-16">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row justify-between items-end gap-6 pb-4 border-b border-gray-100 dark:border-white/10">
+<div class="max-w-2xl">
+<h2 class="text-3xl md:text-5xl font-black tracking-tight text-text-main dark:text-white mb-4">
+                                Why Partner with <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Kelsey Autumn?</span>
+</h2>
+<p class="text-lg text-text-muted dark:text-gray-300">
+                                My creative process is designed to convert passive viewers into loyal customers through authentic storytelling.
+                            </p>
+</div>
+<a class="hidden md:flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all" href="portfolio.html">
+                            View Case Studies <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- Split Content: Visuals + Features List -->
+<div class="flex flex-col lg:flex-row gap-12 items-center">
+<!-- Left: Large Visual (Behind the Scenes) -->
+<div class="w-full lg:w-5/12 order-2 lg:order-1 relative group">
+<div class="absolute inset-0 bg-primary rounded-[2.5rem] rotate-3 opacity-20 group-hover:rotate-6 transition-transform duration-500"></div>
+<div class="relative h-[500px] w-full bg-gray-100 rounded-[2.5rem] overflow-hidden shadow-lg">
+<img alt="Close up of beauty products and camera setup for a content creation shoot" class="w-full h-full object-cover" data-alt="Close up of beauty products and camera setup for a content creation shoot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAL47F8LEUTUNzwxuBa123rhmjSJNiderN7-6IB0_3FQgmgEhnuoXVdoz-X90NJRlTyf-KsEgnPckDwAcoL61XF1kn3ocn0C5_lzrYuCW0I9riQ_gvBXSt6tT7BuezR4jsHF1A1q_KTx9NDGLVFdfmeBWrK58QssHbnM_v42L6DjPyKsQ4bQbRujrh6p9tz7M4XUUZRGsa8mdwT4Z8HBEvNn5r09-Hz_QSmoibVSG3UkBJBnnUpt1RHSYgM35rm25Bccwg3rKc5_U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-8">
+<div class="bg-white/20 backdrop-blur-md border border-white/30 p-4 rounded-xl">
+<p class="text-white text-sm font-medium">"Kelsey's content outperformed our internal ads by 3x ROI."</p>
+<p class="text-white/80 text-xs mt-2">— Marketing Director, Glossier</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Feature List -->
+<div class="w-full lg:w-7/12 order-1 lg:order-2 flex flex-col gap-6">
+<!-- Feature 1 -->
+<div class="group flex gap-5 p-6 rounded-2xl hover:bg-background-light dark:hover:bg-white/5 border border-transparent hover:border-primary/10 transition-all duration-300 cursor-default">
+<div class="shrink-0 flex items-center justify-center size-14 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-[28px]">psychology</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-xl font-bold text-text-main dark:text-white">Strategy First</h3>
+<p class="text-text-muted dark:text-gray-400 leading-relaxed">
+                                        I don't just film pretty clips; I write direct-response scripts designed to stop the scroll and drive measurable ROI for your brand.
+                                    </p>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="group flex gap-5 p-6 rounded-2xl hover:bg-background-light dark:hover:bg-white/5 border border-transparent hover:border-primary/10 transition-all duration-300 cursor-default">
+<div class="shrink-0 flex items-center justify-center size-14 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-[28px]">auto_awesome</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-xl font-bold text-text-main dark:text-white">High-End Aesthetics</h3>
+<p class="text-text-muted dark:text-gray-400 leading-relaxed">
+                                        Cinema-quality visuals that elevate your brand perception with a bold, girly aesthetic that stands out in saturated feeds.
+                                    </p>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="group flex gap-5 p-6 rounded-2xl hover:bg-background-light dark:hover:bg-white/5 border border-transparent hover:border-primary/10 transition-all duration-300 cursor-default">
+<div class="shrink-0 flex items-center justify-center size-14 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-[28px]">trending_up</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-xl font-bold text-text-main dark:text-white">Trend Authority</h3>
+<p class="text-text-muted dark:text-gray-400 leading-relaxed">
+                                        Always on the pulse of what's viral on TikTok and Reels, ensuring native engagement that feels like entertainment, not an ad.
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center md:hidden">
+<a class="flex items-center justify-center w-full max-w-xs h-12 rounded-full bg-primary text-white font-bold" href="portfolio.html">
+                            View Case Studies
+                        </a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-[#f4f0f2] dark:border-[#3a2e34]">
+<div class="flex flex-col gap-6 px-5 py-10 items-center justify-center text-center">
+<div class="flex items-center gap-3 text-text-main dark:text-white mb-2">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<span class="text-lg font-bold">Kelsey Autumn</span>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+<a class="text-text-muted hover:text-primary transition-colors text-sm font-medium" href="portfolio.html">Portfolio</a>
+<a class="text-text-muted hover:text-primary transition-colors text-sm font-medium" href="services.html">Services</a>
+<a class="text-text-muted hover:text-primary transition-colors text-sm font-medium" href="javascript:void(0)" onclick="alert('Privacy Policy coming soon!')">Privacy Policy</a>
+<a class="text-text-muted hover:text-primary transition-colors text-sm font-medium" href="javascript:void(0)" onclick="alert('Terms of Service coming soon!')">Terms of Service</a>
+</div>
+<div class="flex flex-wrap justify-center gap-6 mt-2">
+<a class="text-text-muted hover:text-primary transition-colors group" href="https://instagram.com" target="_blank">
+<!-- Instagram Icon replacement -->
+<span class="material-symbols-outlined text-[24px]">photo_camera</span>
+</a>
+<a class="text-text-muted hover:text-primary transition-colors group" href="https://tiktok.com" target="_blank">
+<!-- TikTok Icon replacement (using music_note as proxy for now or generic video) -->
+<span class="material-symbols-outlined text-[24px]">music_note</span>
+</a>
+<a class="text-text-muted hover:text-primary transition-colors group" href="https://youtube.com" target="_blank">
+<!-- YouTube Icon replacement -->
+<span class="material-symbols-outlined text-[24px]">play_circle</span>
+</a>
+<a class="text-text-muted hover:text-primary transition-colors group" href="contact.html">
+<!-- Mail Icon -->
+<span class="material-symbols-outlined text-[24px]">mail</span>
+</a>
+</div>
+<p class="text-text-muted/60 text-sm font-normal mt-4">© 2024 Kelsey Autumn. All rights reserved.</p>
+</div>
+</footer>
+</div>
+</body></html>
